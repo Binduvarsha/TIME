@@ -1,0 +1,28 @@
+#to convert from seconds to hours and minutes
+'''27. Write a class called Time whose only field is a time in seconds. It should 
+have a method called convert_to_minutes that returns a string of minutes and 
+seconds formatted as in the following example: if seconds is 230, the method 
+should return '5:50'. It should also have a method called convert_to_hours
+that returns a string of hours, minutes, and seconds formatted analogously 
+to the previous method.
+'''
+
+class Time:
+    def __init__(self,s):
+        self.s=s
+    def c_to_m(self):
+        m=self.s//60
+        s=self.s-m*60
+        print(m,":",s)
+    def c_to_h(self):
+        h=self.s//3600
+        s=self.s-h*3600
+        m=s//60
+        s=s-m*60
+        print(h,":",m,":",s)
+        
+
+s=int(input("enter no.of seconds:"))
+obj=Time(s)
+obj.c_to_m()
+obj.c_to_h()
